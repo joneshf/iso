@@ -33,4 +33,4 @@ module Language.Iso.Target.Erlang where
     ite b t f = Erlang $
       "if " ++ runErlang b ++ " -> " ++
                runErlang t ++ "; true -> " ++
-               runErlang f ++ "end"
+               runErlang f ++ " end"
