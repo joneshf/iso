@@ -10,6 +10,7 @@ module Language.Iso where
   import qualified Language.Iso.Var as I
 
   import qualified Language.Iso.Target.Erlang as I
+  import qualified Language.Iso.Target.FSharp as I
   import qualified Language.Iso.Target.Haskell as I
   import qualified Language.Iso.Target.JavaScript as I
   import qualified Language.Iso.Target.Lua as I
@@ -35,6 +36,7 @@ module Language.Iso where
 
   type AST = I.AST
   type Erlang = I.Erlang
+  type FSharp = I.FSharp
   type Haskell = I.Haskell
   type JavaScript = I.JavaScript
   type Lua = I.Lua

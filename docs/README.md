@@ -8,6 +8,8 @@
 
     type Erlang = I.Erlang
 
+    type FSharp = I.FSharp
+
     type Haskell = I.Haskell
 
     type JavaScript = I.JavaScript
