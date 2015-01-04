@@ -11,7 +11,7 @@ var paths = {
       'bower_components/purescript-*/src/**/*.purs.hs'
     ],
     dest: '',
-    docsDest: 'README.md'
+    docsDest: 'docs/README.md'
 };
 
 var options = {
