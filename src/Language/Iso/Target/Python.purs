@@ -21,7 +21,7 @@ module Language.Iso.Target.Python where
     lam v b = Python $ "lambda " ++ v ++ ": " ++ runPython b
 
   instance appPython :: App Python where
-    app f x = Python $ runPython f ++ "(" ++ runPython x ++ ")"
+    app f x = Python $ "(" ++ runPython f ++ ")(" ++ runPython x ++ ")"
 
   instance flsPython :: Fls Python where
     fls = Python $ "false"

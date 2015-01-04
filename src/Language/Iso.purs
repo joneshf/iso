@@ -8,10 +8,16 @@ module Language.Iso where
   import qualified Language.Iso.Tru as I
   import qualified Language.Iso.Prelude as I
   import qualified Language.Iso.Var as I
+
   import qualified Language.Iso.Target.Erlang as I
+  import qualified Language.Iso.Target.Haskell as I
   import qualified Language.Iso.Target.JavaScript as I
+  import qualified Language.Iso.Target.Lua as I
   import qualified Language.Iso.Target.PureScript as I
   import qualified Language.Iso.Target.Python as I
+  import qualified Language.Iso.Target.Ruby as I
+  import qualified Language.Iso.Target.SML as I
+  import qualified Language.Iso.Target.Scala as I
   import qualified Language.Iso.Target.Scheme as I
 
   app = I.app
@@ -26,9 +32,15 @@ module Language.Iso where
   alpha = I.alpha
   beta = I.beta
   ast2Repr = I.ast2Repr
+
   type AST = I.AST
   type Erlang = I.Erlang
+  type Haskell = I.Haskell
   type JavaScript = I.JavaScript
+  type Lua = I.Lua
   type PureScript = I.PureScript
   type Python = I.Python
+  type Ruby = I.Ruby
+  type SML = I.SML
+  type Scala = I.Scala
   type Scheme = I.Scheme

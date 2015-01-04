@@ -8,11 +8,21 @@
 
     type Erlang = I.Erlang
 
+    type Haskell = I.Haskell
+
     type JavaScript = I.JavaScript
+
+    type Lua = I.Lua
 
     type PureScript = I.PureScript
 
     type Python = I.Python
+
+    type Ruby = I.Ruby
+
+    type SML = I.SML
+
+    type Scala = I.Scala
 
     type Scheme = I.Scheme
 
@@ -139,6 +149,56 @@
     instance varErlang :: Var Erlang
 
 
+## Module Language.Iso.Target.FSharp
+
+### Types
+
+    newtype FSharp where
+      FSharp :: String -> FSharp
+
+
+### Type Class Instances
+
+    instance appFSharp :: App FSharp
+
+    instance flsFSharp :: Fls FSharp
+
+    instance iteFSharp :: Ite FSharp
+
+    instance lamFSharp :: Lam FSharp
+
+    instance showFSharp :: Show FSharp
+
+    instance truFSharp :: Tru FSharp
+
+    instance varFSharp :: Var FSharp
+
+
+## Module Language.Iso.Target.Haskell
+
+### Types
+
+    newtype Haskell where
+      Haskell :: String -> Haskell
+
+
+### Type Class Instances
+
+    instance appHaskell :: App Haskell
+
+    instance flsHaskell :: Fls Haskell
+
+    instance iteHaskell :: Ite Haskell
+
+    instance lamHaskell :: Lam Haskell
+
+    instance showHaskell :: Show Haskell
+
+    instance truHaskell :: Tru Haskell
+
+    instance varHaskell :: Var Haskell
+
+
 ## Module Language.Iso.Target.JavaScript
 
 ### Types
@@ -162,6 +222,29 @@
     instance truJavaScript :: Tru JavaScript
 
     instance varJavaScript :: Var JavaScript
+
+
+## Module Language.Iso.Target.Lua
+
+### Types
+
+    newtype Lua where
+      Lua :: String -> Lua
+
+
+### Type Class Instances
+
+    instance appLua :: App Lua
+
+    instance flsLua :: Fls Lua
+
+    instance lamLua :: Lam Lua
+
+    instance showLua :: Show Lua
+
+    instance truLua :: Tru Lua
+
+    instance varLua :: Var Lua
 
 
 ## Module Language.Iso.Target.PureScript
@@ -212,6 +295,79 @@
     instance truPython :: Tru Python
 
     instance varPython :: Var Python
+
+
+## Module Language.Iso.Target.Ruby
+
+### Types
+
+    newtype Ruby where
+      Ruby :: String -> Ruby
+
+
+### Type Class Instances
+
+    instance appRuby :: App Ruby
+
+    instance flsRuby :: Fls Ruby
+
+    instance iteRuby :: Ite Ruby
+
+    instance showRuby :: Show Ruby
+
+    instance truRuby :: Tru Ruby
+
+    instance varRuby :: Var Ruby
+
+
+## Module Language.Iso.Target.SML
+
+### Types
+
+    newtype SML where
+      SML :: String -> SML
+
+
+### Type Class Instances
+
+    instance appSML :: App SML
+
+    instance flsSML :: Fls SML
+
+    instance iteSML :: Ite SML
+
+    instance lamSML :: Lam SML
+
+    instance showSML :: Show SML
+
+    instance truSML :: Tru SML
+
+    instance varSML :: Var SML
+
+
+## Module Language.Iso.Target.Scala
+
+### Types
+
+    newtype Scala where
+      Scala :: String -> Scala
+
+
+### Type Class Instances
+
+    instance appScala :: App Scala
+
+    instance flsScala :: Fls Scala
+
+    instance iteScala :: Ite Scala
+
+    instance lamScala :: Lam Scala
+
+    instance showScala :: Show Scala
+
+    instance truScala :: Tru Scala
+
+    instance varScala :: Var Scala
 
 
 ## Module Language.Iso.Target.Scheme

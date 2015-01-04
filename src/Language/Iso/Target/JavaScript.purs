@@ -21,7 +21,7 @@ module Language.Iso.Target.JavaScript where
     lam v b = JavaScript $ "function (" ++ v ++ ") { return " ++ runJavaScript b ++ "; }"
 
   instance appJavaScript :: App JavaScript where
-    app f x = JavaScript $ runJavaScript f ++ "(" ++ runJavaScript x ++ ")"
+    app f x = JavaScript $ "(" ++ runJavaScript f ++ ")(" ++ runJavaScript x ++ ")"
 
   instance flsJavaScript :: Fls JavaScript where
     fls = JavaScript $ "false"
