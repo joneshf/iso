@@ -8,8 +8,9 @@ module Language.Iso where
   import qualified Language.Iso.Tru as I
   import qualified Language.Iso.Prelude as I
   import qualified Language.Iso.Var as I
-  import qualified Language.Iso.Target.JS as I
-  import qualified Language.Iso.Target.PS as I
+  import qualified Language.Iso.Target.Erlang as I
+  import qualified Language.Iso.Target.JavaScript as I
+  import qualified Language.Iso.Target.PureScript as I
   import qualified Language.Iso.Target.Python as I
   import qualified Language.Iso.Target.Scheme as I
 
@@ -26,7 +27,8 @@ module Language.Iso where
   beta = I.beta
   ast2Repr = I.ast2Repr
   type AST = I.AST
-  type JS = I.JS
-  type PS = I.PS
+  type Erlang = I.Erlang
+  type JavaScript = I.JavaScript
+  type PureScript = I.PureScript
   type Python = I.Python
   type Scheme = I.Scheme

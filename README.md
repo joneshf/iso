@@ -15,6 +15,7 @@ So, we can use the untyped lambda calculus as the intermediate representation fo
 
 #### Current Targets
 
+* Erlang
 * JavaScript
 * PureScript
 * Python

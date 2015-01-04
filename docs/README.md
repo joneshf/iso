@@ -6,9 +6,11 @@
 
     type AST = I.AST
 
-    type JS = I.JS
+    type Erlang = I.Erlang
 
-    type PS = I.PS
+    type JavaScript = I.JavaScript
+
+    type PureScript = I.PureScript
 
     type Python = I.Python
 
@@ -112,54 +114,79 @@
       var :: String -> repr
 
 
-## Module Language.Iso.Target.JS
+## Module Language.Iso.Target.Erlang
 
 ### Types
 
-    newtype JS where
-      JS :: String -> JS
+    newtype Erlang where
+      Erlang :: String -> Erlang
 
 
 ### Type Class Instances
 
-    instance appJS :: App JS
+    instance appErlang :: App Erlang
 
-    instance flsJS :: Fls JS
+    instance flsErlang :: Fls Erlang
 
-    instance iteJS :: Ite JS
+    instance iteErlang :: Ite Erlang
 
-    instance lamJS :: Lam JS
+    instance lamErlang :: Lam Erlang
 
-    instance showJS :: Show JS
+    instance showErlang :: Show Erlang
 
-    instance truJS :: Tru JS
+    instance truErlang :: Tru Erlang
 
-    instance varJS :: Var JS
+    instance varErlang :: Var Erlang
 
 
-## Module Language.Iso.Target.PS
+## Module Language.Iso.Target.JavaScript
 
 ### Types
 
-    newtype PS where
-      PS :: String -> PS
+    newtype JavaScript where
+      JavaScript :: String -> JavaScript
 
 
 ### Type Class Instances
 
-    instance appPS :: App PS
+    instance appJavaScript :: App JavaScript
 
-    instance flsPS :: Fls PS
+    instance flsJavaScript :: Fls JavaScript
 
-    instance itePS :: Ite PS
+    instance iteJavaScript :: Ite JavaScript
 
-    instance lamPS :: Lam PS
+    instance lamJavaScript :: Lam JavaScript
 
-    instance showPS :: Show PS
+    instance showJavaScript :: Show JavaScript
 
-    instance truPS :: Tru PS
+    instance truJavaScript :: Tru JavaScript
 
-    instance varPS :: Var PS
+    instance varJavaScript :: Var JavaScript
+
+
+## Module Language.Iso.Target.PureScript
+
+### Types
+
+    newtype PureScript where
+      PureScript :: String -> PureScript
+
+
+### Type Class Instances
+
+    instance appPureScript :: App PureScript
+
+    instance flsPureScript :: Fls PureScript
+
+    instance itePureScript :: Ite PureScript
+
+    instance lamPureScript :: Lam PureScript
+
+    instance showPureScript :: Show PureScript
+
+    instance truPureScript :: Tru PureScript
+
+    instance varPureScript :: Var PureScript
 
 
 ## Module Language.Iso.Target.Python
