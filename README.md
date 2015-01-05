@@ -28,14 +28,16 @@ we can compile to `Ruby`, and so on.
 
 #### Current Targets
 
-* Erlang
-* FSharp
-* Haskell
-* JavaScript
-* Lua
-* PureScript
-* Python
-* Ruby
-* SML
-* Scala
-* Scheme
+| Language   | Fully Implemented | Missing |
+|------------|-------------------|---------|
+| Erlang     | Yes               |         |
+| FSharp     | Yes               |         |
+| Haskell    | Yes               |         |
+| JavaScript | Yes               |         |
+| Lua        |                   | `Ite`   |
+| PureScript | Yes               |         |
+| Python     | Yes               |         |
+| Ruby       |                   | `Lam`   |
+| SML        | Yes               |         |
+| Scala      | Yes               |         |
+| Scheme     | Yes               |         |
