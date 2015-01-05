@@ -16,7 +16,13 @@ So, we can use the untyped lambda calculus as the intermediate representation fo
 #### Current Targets
 
 * Erlang
+* FSharp
+* Haskell
 * JavaScript
+* Lua
 * PureScript
 * Python
+* Ruby
+* SML
+* Scala
 * Scheme
