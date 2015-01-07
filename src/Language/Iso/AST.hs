@@ -10,24 +10,12 @@ module Language.Iso.AST where
   data AST = VAR String
            | LAM String AST
            | APP AST AST
+           deriving (Eq, Show)
 
   ast2Repr :: (App repr, Lam repr, Var repr) => AST -> repr
   ast2Repr (VAR x) = var x
   ast2Repr (LAM x b) = lam x (ast2Repr b)
   ast2Repr (APP f x) = app (ast2Repr f) (ast2Repr x)
-
-  instance Eq AST where
-    (==) (VAR x)   (VAR y)   = x == y
-    (==) (LAM x b) (LAM y c) = x == y && b == c
-    (==) (APP f x) (APP g y) = f == g && x == y
-    (==) _         _         = False
-
-    (/=) x         y         = not (x == y)
-
-  instance Show AST where
-    show (VAR x) = "Var (" ++ x ++ ")"
-    show (LAM x b) = "Lam (" ++ x ++ ") (" ++ show b ++ ")"
-    show (APP f x) = "App (" ++ show f ++ ") (" ++ show x ++ ")"
 
   instance Var AST where
     var = VAR
