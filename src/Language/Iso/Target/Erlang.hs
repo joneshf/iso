@@ -11,25 +11,25 @@ module Language.Iso.Target.Erlang where
 
   runErlang (Erlang ps) = ps
 
-  instance showErlang :: Show Erlang where
+  instance Show Erlang where
     show (Erlang ps) = ps
 
-  instance varErlang :: Var Erlang where
+  instance Var Erlang where
     var x = Erlang x
 
-  instance lamErlang :: Lam Erlang where
+  instance Lam Erlang where
     lam v b = Erlang $ "fun(" ++ v ++ ") -> " ++ runErlang b ++ " end"
 
-  instance appErlang :: App Erlang where
+  instance App Erlang where
     app f x = Erlang $ "(" ++ runErlang f ++ ")(" ++ runErlang x ++ ")"
 
-  instance truErlang :: Tru Erlang where
+  instance Tru Erlang where
     tru = Erlang $ "true"
 
-  instance flsErlang :: Fls Erlang where
+  instance Fls Erlang where
     fls = Erlang $ "false"
 
-  instance iteErlang :: Ite Erlang where
+  instance Ite Erlang where
     ite b t f = Erlang $
       "if " ++ runErlang b ++ " -> " ++
                runErlang t ++ "; true -> " ++

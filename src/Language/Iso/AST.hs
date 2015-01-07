@@ -11,40 +11,40 @@ module Language.Iso.AST where
            | LAM String AST
            | APP AST AST
 
-  ast2Repr :: forall repr. (App repr, Lam repr, Var repr) => AST -> repr
+  ast2Repr :: (App repr, Lam repr, Var repr) => AST -> repr
   ast2Repr (VAR x) = var x
   ast2Repr (LAM x b) = lam x (ast2Repr b)
   ast2Repr (APP f x) = app (ast2Repr f) (ast2Repr x)
 
-  instance eqAST :: Eq AST where
+  instance Eq AST where
     (==) (VAR x)   (VAR y)   = x == y
     (==) (LAM x b) (LAM y c) = x == y && b == c
     (==) (APP f x) (APP g y) = f == g && x == y
-    (==) _         _         = false
+    (==) _         _         = False
 
     (/=) x         y         = not (x == y)
 
-  instance showAST :: Show AST where
+  instance Show AST where
     show (VAR x) = "Var (" ++ x ++ ")"
     show (LAM x b) = "Lam (" ++ x ++ ") (" ++ show b ++ ")"
     show (APP f x) = "App (" ++ show f ++ ") (" ++ show x ++ ")"
 
-  instance varAST :: Var AST where
+  instance Var AST where
     var = VAR
 
-  instance lamAST :: Lam AST where
+  instance Lam AST where
     lam = LAM
 
-  instance appAST :: App AST where
+  instance App AST where
     app = APP
 
-  instance truAST :: Tru AST where
+  instance Tru AST where
     tru = LAM "t" (LAM "f" (VAR "t"))
 
-  instance flsAST :: Fls AST where
+  instance Fls AST where
     fls = LAM "t" (LAM "f" (VAR "f"))
 
-  instance iteAST :: Ite AST where
+  instance Ite AST where
     ite b t f = app (app b t) f
 
   alpha :: String -> AST -> AST -> AST

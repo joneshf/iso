@@ -5,3 +5,5 @@ node_modules/
 output/
 tmp/
 npm-debug.log
+cabal.sandbox.config
+dist

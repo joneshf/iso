@@ -11,26 +11,26 @@ module Language.Iso.Target.Scheme where
 
   runScheme (Scheme ps) = ps
 
-  instance showScheme :: Show Scheme where
+  instance Show Scheme where
     show (Scheme ps) = ps
 
-  instance varScheme :: Var Scheme where
+  instance Var Scheme where
     var x = Scheme x
 
-  instance lamScheme :: Lam Scheme where
+  instance Lam Scheme where
     lam v b = Scheme $ "(lambda (" ++ v ++ ") " ++ runScheme b ++ ")"
 
-  instance appScheme :: App Scheme where
+  instance App Scheme where
     app f x = Scheme $ "(" ++ runScheme f ++ " " ++ runScheme x ++ ")"
 
-  instance flsScheme :: Fls Scheme where
+  instance Fls Scheme where
     fls = Scheme "#f"
 
-  instance iteScheme :: Ite Scheme where
+  instance Ite Scheme where
     ite b t f= Scheme $
       "(if " ++ runScheme b ++ " "
              ++ runScheme t ++ " "
              ++ runScheme f ++ ")"
 
-  instance truScheme :: Tru Scheme where
+  instance Tru Scheme where
     tru = Scheme "#t"

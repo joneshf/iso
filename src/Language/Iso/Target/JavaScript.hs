@@ -11,25 +11,25 @@ module Language.Iso.Target.JavaScript where
 
   runJavaScript (JavaScript js) = js
 
-  instance showJavaScript :: Show JavaScript where
+  instance Show JavaScript where
     show (JavaScript js) = js
 
-  instance varJavaScript :: Var JavaScript where
+  instance Var JavaScript where
     var x = JavaScript x
 
-  instance lamJavaScript :: Lam JavaScript where
+  instance Lam JavaScript where
     lam v b = JavaScript $ "function (" ++ v ++ ") { return " ++ runJavaScript b ++ "; }"
 
-  instance appJavaScript :: App JavaScript where
+  instance App JavaScript where
     app f x = JavaScript $ "(" ++ runJavaScript f ++ ")(" ++ runJavaScript x ++ ")"
 
-  instance flsJavaScript :: Fls JavaScript where
+  instance Fls JavaScript where
     fls = JavaScript $ "false"
 
-  instance truJavaScript :: Tru JavaScript where
+  instance Tru JavaScript where
     tru = JavaScript $ "true"
 
-  instance iteJavaScript :: Ite JavaScript where
+  instance Ite JavaScript where
     ite b t f = JavaScript $
       runJavaScript b ++ " ? " ++
       runJavaScript t ++ " : " ++

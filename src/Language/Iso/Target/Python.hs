@@ -11,25 +11,25 @@ module Language.Iso.Target.Python where
 
   runPython (Python ps) = ps
 
-  instance showPython :: Show Python where
+  instance Show Python where
     show (Python ps) = ps
 
-  instance varPython :: Var Python where
+  instance Var Python where
     var x = Python x
 
-  instance lamPython :: Lam Python where
+  instance Lam Python where
     lam v b = Python $ "lambda " ++ v ++ ": " ++ runPython b
 
-  instance appPython :: App Python where
+  instance App Python where
     app f x = Python $ "(" ++ runPython f ++ ")(" ++ runPython x ++ ")"
 
-  instance flsPython :: Fls Python where
+  instance Fls Python where
     fls = Python $ "false"
 
-  instance truPython :: Tru Python where
+  instance Tru Python where
     tru = Python $ "true"
 
-  instance itePython :: Ite Python where
+  instance Ite Python where
     ite b t f = Python $
       runPython t ++ " if " ++
       runPython b ++ " else " ++

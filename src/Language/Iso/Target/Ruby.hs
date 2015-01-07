@@ -10,22 +10,22 @@ module Language.Iso.Target.Ruby where
 
   runRuby (Ruby js) = js
 
-  instance showRuby :: Show Ruby where
+  instance Show Ruby where
     show (Ruby js) = js
 
-  instance varRuby :: Var Ruby where
+  instance Var Ruby where
     var x = Ruby x
 
-  instance appRuby :: App Ruby where
+  instance App Ruby where
     app f x = Ruby $ "(" ++ runRuby f ++ ")(" ++ runRuby x ++ ")"
 
-  instance flsRuby :: Fls Ruby where
+  instance Fls Ruby where
     fls = Ruby $ "false"
 
-  instance truRuby :: Tru Ruby where
+  instance Tru Ruby where
     tru = Ruby $ "true"
 
-  instance iteRuby :: Ite Ruby where
+  instance Ite Ruby where
     ite b t f = Ruby $
       "if " ++ runRuby b ++
       " then " ++ runRuby t ++

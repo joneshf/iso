@@ -11,25 +11,25 @@ module Language.Iso.Target.Scala where
 
   runScala (Scala ps) = ps
 
-  instance showScala :: Show Scala where
+  instance Show Scala where
     show (Scala ps) = ps
 
-  instance varScala :: Var Scala where
+  instance Var Scala where
     var x = Scala x
 
-  instance lamScala :: Lam Scala where
+  instance Lam Scala where
     lam v b = Scala $ "(" ++ v ++ ") => {" ++ runScala b ++ "}"
 
-  instance appScala :: App Scala where
+  instance App Scala where
     app f x = Scala $ "(" ++ runScala f ++ ") (" ++ runScala x ++ ")"
 
-  instance truScala :: Tru Scala where
+  instance Tru Scala where
     tru = Scala $ "true"
 
-  instance flsScala :: Fls Scala where
+  instance Fls Scala where
     fls = Scala $ "false"
 
-  instance iteScala :: Ite Scala where
+  instance Ite Scala where
     ite b t f = Scala $
       "if (" ++ runScala b ++
       ") {" ++ runScala t ++

@@ -10,20 +10,20 @@ module Language.Iso.Target.Lua where
 
   runLua (Lua js) = js
 
-  instance showLua :: Show Lua where
+  instance Show Lua where
     show (Lua js) = js
 
-  instance varLua :: Var Lua where
+  instance Var Lua where
     var x = Lua x
 
-  instance lamLua :: Lam Lua where
+  instance Lam Lua where
     lam v b = Lua $ "function (" ++ v ++ ") return " ++ runLua b ++ " end"
 
-  instance appLua :: App Lua where
+  instance App Lua where
     app f x = Lua $ "(" ++ runLua f ++ ")(" ++ runLua x ++ ")"
 
-  instance flsLua :: Fls Lua where
+  instance Fls Lua where
     fls = Lua $ "false"
 
-  instance truLua :: Tru Lua where
+  instance Tru Lua where
     tru = Lua $ "true"

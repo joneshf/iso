@@ -11,25 +11,25 @@ module Language.Iso.Target.FSharp where
 
   runFSharp (FSharp ps) = ps
 
-  instance showFSharp :: Show FSharp where
+  instance Show FSharp where
     show (FSharp ps) = ps
 
-  instance varFSharp :: Var FSharp where
+  instance Var FSharp where
     var x = FSharp x
 
-  instance lamFSharp :: Lam FSharp where
+  instance Lam FSharp where
     lam v b = FSharp $ "fun " ++ v ++ " -> " ++ runFSharp b
 
-  instance appFSharp :: App FSharp where
+  instance App FSharp where
     app f x = FSharp $ "(" ++ runFSharp f ++ ") (" ++ runFSharp x ++ ")"
 
-  instance truFSharp :: Tru FSharp where
+  instance Tru FSharp where
     tru = FSharp $ "true"
 
-  instance flsFSharp :: Fls FSharp where
+  instance Fls FSharp where
     fls = FSharp $ "false"
 
-  instance iteFSharp :: Ite FSharp where
+  instance Ite FSharp where
     ite b t f = FSharp $
       "if " ++ runFSharp b ++
       " then " ++ runFSharp t ++

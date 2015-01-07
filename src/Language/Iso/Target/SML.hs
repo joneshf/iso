@@ -11,25 +11,25 @@ module Language.Iso.Target.SML where
 
   runSML (SML ps) = ps
 
-  instance showSML :: Show SML where
+  instance Show SML where
     show (SML ps) = ps
 
-  instance varSML :: Var SML where
+  instance Var SML where
     var x = SML x
 
-  instance lamSML :: Lam SML where
+  instance Lam SML where
     lam v b = SML $ "fn " ++ v ++ " => " ++ runSML b
 
-  instance appSML :: App SML where
+  instance App SML where
     app f x = SML $ "(" ++ runSML f ++ ") (" ++ runSML x ++ ")"
 
-  instance truSML :: Tru SML where
+  instance Tru SML where
     tru = SML $ "true"
 
-  instance flsSML :: Fls SML where
+  instance Fls SML where
     fls = SML $ "false"
 
-  instance iteSML :: Ite SML where
+  instance Ite SML where
     ite b t f = SML $
       "if " ++ runSML b ++
       " then " ++ runSML t ++
