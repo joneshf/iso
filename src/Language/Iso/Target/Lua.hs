@@ -6,9 +6,7 @@ module Language.Iso.Target.Lua where
   import Language.Iso.Tru
   import Language.Iso.Var
 
-  newtype Lua = Lua String
-
-  runLua (Lua js) = js
+  newtype Lua = Lua { runLua :: String }
 
   instance Show Lua where
     show (Lua js) = js

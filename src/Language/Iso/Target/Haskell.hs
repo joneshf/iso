@@ -7,9 +7,7 @@ module Language.Iso.Target.Haskell where
   import Language.Iso.Tru
   import Language.Iso.Var
 
-  newtype Haskell = Haskell String
-
-  runHaskell (Haskell ps) = ps
+  newtype Haskell = Haskell { runHaskell :: String }
 
   instance Show Haskell where
     show (Haskell ps) = ps

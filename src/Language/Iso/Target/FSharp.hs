@@ -7,9 +7,7 @@ module Language.Iso.Target.FSharp where
   import Language.Iso.Tru
   import Language.Iso.Var
 
-  newtype FSharp = FSharp String
-
-  runFSharp (FSharp ps) = ps
+  newtype FSharp = FSharp { runFSharp :: String }
 
   instance Show FSharp where
     show (FSharp ps) = ps

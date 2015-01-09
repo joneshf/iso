@@ -7,9 +7,7 @@ module Language.Iso.Target.Erlang where
   import Language.Iso.Tru
   import Language.Iso.Var
 
-  newtype Erlang = Erlang String
-
-  runErlang (Erlang ps) = ps
+  newtype Erlang = Erlang { runErlang :: String }
 
   instance Show Erlang where
     show (Erlang ps) = ps

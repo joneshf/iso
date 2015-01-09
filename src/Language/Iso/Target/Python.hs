@@ -7,9 +7,7 @@ module Language.Iso.Target.Python where
   import Language.Iso.Tru
   import Language.Iso.Var
 
-  newtype Python = Python String
-
-  runPython (Python ps) = ps
+  newtype Python = Python { runPython :: String }
 
   instance Show Python where
     show (Python ps) = ps

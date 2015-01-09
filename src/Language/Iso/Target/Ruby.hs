@@ -6,9 +6,7 @@ module Language.Iso.Target.Ruby where
   import Language.Iso.Tru
   import Language.Iso.Var
 
-  newtype Ruby = Ruby String
-
-  runRuby (Ruby js) = js
+  newtype Ruby = Ruby { runRuby :: String }
 
   instance Show Ruby where
     show (Ruby js) = js

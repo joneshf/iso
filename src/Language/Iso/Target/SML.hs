@@ -7,9 +7,7 @@ module Language.Iso.Target.SML where
   import Language.Iso.Tru
   import Language.Iso.Var
 
-  newtype SML = SML String
-
-  runSML (SML ps) = ps
+  newtype SML = SML { runSML :: String }
 
   instance Show SML where
     show (SML ps) = ps

@@ -7,9 +7,7 @@ module Language.Iso.Target.Scheme where
   import Language.Iso.Tru
   import Language.Iso.Var
 
-  newtype Scheme = Scheme String
-
-  runScheme (Scheme ps) = ps
+  newtype Scheme = Scheme { runScheme :: String }
 
   instance Show Scheme where
     show (Scheme ps) = ps

@@ -7,9 +7,7 @@ module Language.Iso.Target.Scala where
   import Language.Iso.Tru
   import Language.Iso.Var
 
-  newtype Scala = Scala String
-
-  runScala (Scala ps) = ps
+  newtype Scala = Scala { runScala :: String }
 
   instance Show Scala where
     show (Scala ps) = ps

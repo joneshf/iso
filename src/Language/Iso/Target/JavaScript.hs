@@ -7,9 +7,7 @@ module Language.Iso.Target.JavaScript where
   import Language.Iso.Tru
   import Language.Iso.Var
 
-  newtype JavaScript = JavaScript String
-
-  runJavaScript (JavaScript js) = js
+  newtype JavaScript = JavaScript { runJavaScript :: String }
 
   instance Show JavaScript where
     show (JavaScript js) = js

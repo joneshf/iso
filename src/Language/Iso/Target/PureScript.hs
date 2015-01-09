@@ -7,9 +7,7 @@ module Language.Iso.Target.PureScript where
   import Language.Iso.Tru
   import Language.Iso.Var
 
-  newtype PureScript = PureScript String
-
-  runPureScript (PureScript ps) = ps
+  newtype PureScript = PureScript { runPureScript :: String }
 
   instance Show PureScript where
     show (PureScript ps) = ps
